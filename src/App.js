@@ -55,7 +55,7 @@ function BisindoRecognition() {
     } else {
       alert("Media not supported");
     }
-
+    
   }, []);
 
   useEffect(() => {
@@ -67,10 +67,12 @@ function BisindoRecognition() {
     return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
   }
 
-  async function createGestureRecognizer(canvasCtx) {
-    const vision = await FilesetResolver.forVisionTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
-    );
+  async function createGestureRecognizer() {
+    // const vision = await FilesetResolver.forVisionTasks(
+    //   "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+    // );
+
+    const vision = await FilesetResolver.forVisionTasks();
 
     gestureRecognizerRef.current = await GestureRecognizer.createFromOptions(
       vision,
@@ -252,7 +254,7 @@ function BisindoRecognition() {
         <button id="enableWebcamButton" 
           onClick={enableCam} 
           type="button" 
-          className="btn btn-primary text-light"
+          className="btn btn-warning text-light"
           disabled={!isMediaSupported}
         >
           <span>Enable Webcam</span>
