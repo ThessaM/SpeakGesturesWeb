@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 //   FilesetResolver,
 //   DrawingUtils
 // } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
+
 import {
   GestureRecognizer,
   FilesetResolver,
