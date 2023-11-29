@@ -3,3 +3,36 @@
   left: 0px; 
   top: 0px;
 } */
+
+#navbar{
+  background-color: #333333;
+  align-items: start;
+  display: flex;
+}
+
+#gesture-display{
+  max-lines: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.App-body {
+  background-color: #edf7ff;
+  min-height: 90vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  color: white;
+}
