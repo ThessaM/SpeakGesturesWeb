@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SpeakGesturesWeb/static/css/main.76bf3157.css",
-    "main.js": "/SpeakGesturesWeb/static/js/main.ee23c62c.js",
+    "main.js": "/SpeakGesturesWeb/static/js/main.2985abf9.js",
     "static/js/787.62265c05.chunk.js": "/SpeakGesturesWeb/static/js/787.62265c05.chunk.js",
     "static/media/gesture_recognizer.task": "/SpeakGesturesWeb/static/media/gesture_recognizer.c6c1abfbc28e1c3b8bfd.task",
     "static/media/SpeakGesturesLogo.png": "/SpeakGesturesWeb/static/media/SpeakGesturesLogo.db71a2cfcd3cb865051c.png",
     "index.html": "/SpeakGesturesWeb/index.html",
     "main.76bf3157.css.map": "/SpeakGesturesWeb/static/css/main.76bf3157.css.map",
-    "main.ee23c62c.js.map": "/SpeakGesturesWeb/static/js/main.ee23c62c.js.map",
+    "main.2985abf9.js.map": "/SpeakGesturesWeb/static/js/main.2985abf9.js.map",
     "787.62265c05.chunk.js.map": "/SpeakGesturesWeb/static/js/787.62265c05.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76bf3157.css",
-    "static/js/main.ee23c62c.js"
+    "static/js/main.2985abf9.js"
   ]
 }
