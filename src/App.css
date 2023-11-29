@@ -36,3 +36,23 @@
   font-weight: bold;
   color: white;
 }
+
+
+.background-transition {
+  /* height: 100vh; */
+  background: linear-gradient(-135deg, #b3e7ff, #edf7ff, #707070);
+  background-size: 300% 300%;
+  animation: bg-gradient-animation 15s linear infinite;
+}
+
+@keyframes bg-gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

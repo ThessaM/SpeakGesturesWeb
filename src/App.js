@@ -25,8 +25,11 @@ function App(){
 
 
 function BisindoRecognition() {
-  const videoHeight = "360px";
-  const videoWidth = "480px";
+  
+  //RECOGNITION
+
+  const videoHeight = window.screen.width < 400? "300px" : "360px";
+  const videoWidth = window.screen.width < 400? "540px" : "480px";
   const canvasRef = useRef(null);
   const [webCamRunning, setWebCamRunning] = useState(false);
   const [gestureOutputVisible, setGestureOutputVisible] = useState(false);
@@ -36,16 +39,29 @@ function BisindoRecognition() {
   const gestureRecognizerRef = useRef(null);
   const videoRef = useRef(null);
   const [resultArr, setResultArr] = useState([]);
+  const [isMediaSupported, setIsMediaSupported] = useState(false);
   var runningMode = "IMAGE";
 
   useEffect(() => {
     const canvasCtx = canvasRef.current.getContext("2d");
-    createGestureRecognizer(canvasCtx);
+
+    if (hasGetUserMedia()) {
+      setIsMediaSupported(true);
+      createGestureRecognizer(canvasCtx);
+    } else {
+      alert("Media not supported");
+    }
+
   }, []);
 
   useEffect(() => {
     handleGestureResult();
   }, [resultArr]);
+
+
+  function hasGetUserMedia() {
+    return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+  }
 
   async function createGestureRecognizer(canvasCtx) {
     const vision = await FilesetResolver.forVisionTasks(
@@ -196,11 +212,8 @@ function BisindoRecognition() {
     }
   };
 
-  
-
-
   return (
-    <div className="App-body">
+    <div className="App-body background-transition">
       
       <div className='d-flex flex-column align-items-center'>
         
@@ -215,6 +228,7 @@ function BisindoRecognition() {
             playsInline 
             ref={videoRef} 
             className='rounded-4'
+            style={{width: `${videoWidth}`, height: `${videoHeight}`}}
           ></video>
           
           <canvas
@@ -234,7 +248,8 @@ function BisindoRecognition() {
         <button id="enableWebcamButton" 
           onClick={enableCam} 
           type="button" 
-          className="btn btn-info text-light"
+          className="btn btn-primary text-light"
+          disabled={!isMediaSupported}
         >
           <span>Enable Webcam</span>
         </button>
