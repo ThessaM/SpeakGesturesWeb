@@ -69,9 +69,15 @@ function BisindoRecognition() {
   }
 
   async function createGestureRecognizer() {
+    // const vision = await FilesetResolver.forVisionTasks(
+    //   "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+    // );
+
     const vision = await FilesetResolver.forVisionTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/wasm"
     );
+
+    console.log(vision);
 
     // const vision = await FilesetResolver.forVisionTasks();
 
