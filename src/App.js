@@ -1,11 +1,15 @@
 import './App.css';
 import React, { useEffect, useRef, useState } from "react";
+// import {
+//   GestureRecognizer,
+//   FilesetResolver,
+//   DrawingUtils
+// } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
 import {
   GestureRecognizer,
   FilesetResolver,
   DrawingUtils
-} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
-
+} from "@mediapipe/tasks-vision";
 
 
 import model from './Assets/gesture_recognizer.task';
