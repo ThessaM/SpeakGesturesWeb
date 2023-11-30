@@ -70,13 +70,15 @@ function BisindoRecognition() {
   }
 
   async function createGestureRecognizer() {
-    const vision = await FilesetResolver.forVisionTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8/wasm"
-    );
+    // const vision = await FilesetResolver.forVisionTasks(
+    //   "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8/wasm"
+    // );
 
     // const vision = await FilesetResolver.forVisionTasks(
     //   {wasm}
     // );
+
+    const vision = {wasmLoaderPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8/wasm/vision_wasm_internal.js', wasmBinaryPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8/wasm/vision_wasm_internal.wasm'};
 
     console.log(vision);
 
@@ -262,7 +264,7 @@ function BisindoRecognition() {
         <button id="enableWebcamButton" 
           onClick={enableCam} 
           type="button" 
-          className="btn btn-warning text-light"
+          className="btn btn-primary text-light"
           disabled={!isMediaSupported}
         >
           <span>Enable Webcam</span>
