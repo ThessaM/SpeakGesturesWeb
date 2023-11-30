@@ -15,6 +15,7 @@ import {
 
 import model from './Assets/gesture_recognizer.task';
 import logoSG from './Assets/SpeakGesturesLogo.png';
+// import wasm from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/wasm';
 
 
 
@@ -69,13 +70,13 @@ function BisindoRecognition() {
   }
 
   async function createGestureRecognizer() {
-    // const vision = await FilesetResolver.forVisionTasks(
-    //   "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
-    // );
-
     const vision = await FilesetResolver.forVisionTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/wasm"
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8/wasm"
     );
+
+    // const vision = await FilesetResolver.forVisionTasks(
+    //   {wasm}
+    // );
 
     console.log(vision);
 
